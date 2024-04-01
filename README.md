@@ -1,68 +1,42 @@
-# Projeto backend-fourcard
+# Documentação do Backend em Quarkus
 
-Base do projeto
-```
-https://code.quarkus.io/?g=br.com.backend&a=app&b=GRADLE&e=resteasy&e=resteasy-jackson&e=smallrye-fault-tolerance&e=smallrye-metrics&e=smallrye-health&e=smallrye-openapi&e=smallrye-opentracing&e=rest-client&e=smallrye-jwt&e=rest-client-jackson&e=hibernate-validator&e=hibernate-orm-panache&e=jdbc-postgresql&e=jacoco
-```
+Este é um guia para iniciar e acessar o backend em Quarkus, que está rodando em um ambiente Docker.
 
-## Executando o aplicativo no modo dev
+## Inicialização do Backend
 
-Pode executar o seu aplicativo no modo dev que permite a codificação ao vivo usando:
-```shell script
-./gradlew quarkusDev
-```
+Certifique-se de ter o Docker instalado em seu sistema antes de prosseguir.
 
-> **_NOTE:_** O Quarkus agora vem com uma Dev UI, que está disponível no modo dev apenas em http://localhost:8080/dev/.
+1. Abra o terminal.
 
-## Empacotando e executando o aplicativo
+2. Navegue até o diretório do projeto onde está localizado o backend Quarkus.
 
-O aplicativo pode ser empacotado usando:
-```shell script
-./gradlew build
-```
+3. Execute o seguinte comando para iniciar o servidor e o banco de dados PostgreSQL:
 
-Ela produz o `quarkus-run.jar` arquivo no `build/quarkus-app/`diretório.
-Esteja ciente que não é um _über-jar_ à medida que as dependências são copiadas para o `build/quarkus-app/lib/` diretório.
+    ```bash
+   docker-compose up
+    ```
 
-O aplicativo agora é executável usando `java -jar build/quarkus-app/quarkus-run.jar`.
+Este comando iniciará o servidor Quarkus e o banco de dados PostgreSQL em contêineres Docker. O servidor estará acessível na porta 8080 e o banco de dados PostgreSQL na porta 5432.
 
-Se você deseja construir um _über-jar_, execute o seguinte comando:
-```shell script
-./gradlew build -Dquarkus.package.type=uber-jar
-```
+## Acesso à Documentação
 
-O aplicativo, empacotado como umn _über-jar_, agora é executável usando `java -jar build/*-runner.jar`.
+Após iniciar o servidor, pela url "http://localhost/8080", você pode direcionado a uma página home, onde poderá acessar a documentação do Swagger. Ou pode acessar diretamente "http://localhost/8080/docs"
 
-## Guias relacionados
+Isso abrirá a página inicial da documentação, onde você poderá explorar os endpoints da API usando o Swagger UI.
 
-- REST Client ([guide](https://quarkus.io/guides/rest-client)): Call REST services
-- RESTEasy JAX-RS ([guide](https://quarkus.io/guides/rest-json)): REST endpoint framework implementing JAX-RS and more
-- SmallRye Health ([guide](https://quarkus.io/guides/microprofile-health)): Monitor service health
+## Credenciais de Acesso ao Banco de Dados
 
-## Código fornecido
+O banco de dados PostgreSQL está rodando em um contêiner Docker com as seguintes credenciais padrão:
 
-### REST Client
+- Usuário: postgres 
+- Senha: postgres 
+- Porta: 5432
 
-Invoque diferentes serviços por meio de REST com JSON
+## Usuário Padrão
 
-[Related guide section...](https://quarkus.io/guides/rest-client)
+Uma migração do banco de dados adiciona um usuário padrão com as seguintes credenciais:
 
-### RESTEasy JAX-RS
+- Email: admin@officom 
+- Senha: admin
 
-Inicie facilmente seus serviços Web RESTful
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
-
-### SmallRye Health
-
-Monitore a integridade do seu aplicativo usando o SmallRye Health
-
-[Related guide section...](https://quarkus.io/guides/smallrye-health)
-
-### Roadmap
-
-- [x] Configurar conexão com banco de dados
-- [x] Configurar Swagger
-- [x] Criar módulo de usuário
-- [x] Configurar autenticação jwt
-- [ ] Criar módulo de permissão
+Certifique-se de usar essas credenciais para acessar a aplicação.
