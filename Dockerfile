@@ -1,8 +1,8 @@
-# Use uma imagem base com o JDK completo (por exemplo, OpenJDK 11 no Alpine)
-FROM adoptopenjdk/openjdk11:alpine
+# Use uma imagem base com o JDK completo (OpenJDK 11 no Debian Slim)
+FROM openjdk:11-jdk-slim
 
 # Configure a variável de ambiente JAVA_HOME
-ENV JAVA_HOME /opt/java/openjdk
+ENV JAVA_HOME /usr/local/openjdk-11
 
 # Diretório de trabalho
 WORKDIR /app
