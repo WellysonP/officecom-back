@@ -15,5 +15,6 @@ jobs:
         run: |
           curl -Ls https://sh.jbang.dev | bash -s - trust add https://repo1.maven.org/maven2/io/quarkus/quarkus-cli/
           curl -Ls https://sh.jbang.dev | bash -s - app install --fresh --force quarkus@quarkusio
+          echo "export PATH=\$PATH:\$HOME/.jbang/bin" >> $GITHUB_ENV
       - name: Build
         run: quarkus build
