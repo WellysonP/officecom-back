@@ -13,9 +13,10 @@ jobs:
           java-version: '17'
       - name: Install Quarkus CLI
         run: |
-          curl -Ls https://sh.jbang.dev | bash -s - trust add https://repo1.maven.org/maven2/io/quarkus/quarkus-cli/
-          curl -Ls https://sh.jbang.dev | bash -s - app install --fresh --force quarkus@quarkusio
-          export PATH=$PATH:$HOME/.jbang/bin
-          echo "export PATH=$PATH:$HOME/.jbang/bin" >> $GITHUB_ENV
+          wget -O /tmp/quarkus-cli.zip https://github.com/quarkusio/quarkus/releases/download/1.15.2.Final/quarkus-cli-1.15.2.Final.zip
+          unzip /tmp/quarkus-cli.zip -d /tmp/quarkus-cli
+          sudo mv /tmp/quarkus-cli/quarkus/bin/quarkus /usr/local/bin/
+        env:
+          JAVA_HOME: ${{ matrix.java-version }}
       - name: Build
         run: quarkus build
