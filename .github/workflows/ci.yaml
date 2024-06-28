@@ -13,8 +13,8 @@ jobs:
           java-version: '17'
       - name: Install Quarkus CLI
         run: |
-          curl -Ls https://sh.jbang.dev | bash -s - app setup
-          jbang app install --force --fresh quarkus@latest
+          curl -Ls https://sh.jbang.dev | bash -s - trust add https://repo1.maven.org/maven2/io/quarkus/quarkus-cli/
+          curl -Ls https://sh.jbang.dev | bash -s - app install --fresh --force quarkus@quarkusio
       - run: quarkus dev
       - name: Build
         run: quarkus build
