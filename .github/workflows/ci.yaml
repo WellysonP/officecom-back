@@ -9,4 +9,4 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-      - run: quarkusDev
+      - run: quarkus dev
