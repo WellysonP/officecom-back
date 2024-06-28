@@ -24,4 +24,4 @@
 
      -- Inserção do usuário padrão
      insert into usuarios (nome, email, senha, status, permissao, created_at, updated_at)
-     values ('Fulano de Tal', 'email@example.com', '$2a$10$7KpBf01VgujivgNRTEB1J.6R9zfdNXinU9e7lIvYsI16q9DgjNo9a', 'ATIVO', 'ADMIN', current_timestamp, current_timestamp);
+     values ('Fulano de Tal', 'admin@officecom', '$2a$10$8sLz7St.zDgBAGhyG3hWI.VkhouMUKzqYmieCvN.6qEyuCTHVQJoW', 'ATIVO', 'ADMIN', current_timestamp, current_timestamp);

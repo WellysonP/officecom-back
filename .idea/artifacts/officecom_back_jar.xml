@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="officecom-back:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/officecom_back_jar</output-path>
+    <root id="archive" name="officecom-back.jar">
+      <element id="library" level="project" name="officecom-back" />
+    </root>
+  </artifact>
+</component>
