@@ -1,0 +1,11 @@
+# Pastas e arquivos do Gradle
+.gradle/
+build/
+
+# Configurações específicas do ambiente de desenvolvimento
+.idea/
+.vscode/
+.DS_Store
+
+# Arquivos temporários do sistema operacional
+Thumbs.db
