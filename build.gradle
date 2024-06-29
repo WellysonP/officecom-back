@@ -2,11 +2,19 @@ plugins {
     id 'java'
     id 'io.quarkus'
     id 'org.jetbrains.kotlin.jvm'
+    id "org.sonarqube" version "5.0.0.4638"
 }
 
 repositories {
     mavenCentral()
     mavenLocal()
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "officecom-back"
+        property "sonar.projectName", "officecom-back"
+    }
 }
 
 task stage(dependsOn: ['build'])
