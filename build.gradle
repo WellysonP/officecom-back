@@ -14,8 +14,8 @@ sonar {
     properties {
         property "sonar.projectKey", "officecom-back"
         property "sonar.projectName", "officecom-back"
-        property "sonar.host.url", System.getenv('SONAR_HOST_URL')
-        property "sonar.login", System.getenv('SONAR_TOKEN')
+        property "sonar.host.url", System.getenv("SONAR_HOST_URL")
+        property "sonar.token", System.getenv("SONAR_TOKEN")
     }
 }
 
