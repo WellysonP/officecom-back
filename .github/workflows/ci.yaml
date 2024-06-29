@@ -31,7 +31,7 @@ jobs:
           repository: "${{ github.event.repository.name }}"
           login: "${{ secrets.DOCKERHUB_USERNAME }}"
           password: "${{ secrets.DOCKERHUB_PASSWORD }}"
-          platforms: ubuntu-latest
+          platforms: linux/amd64,linux/arm64
 
 
 #      - name: Set up QEMU
