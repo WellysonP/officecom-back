@@ -12,7 +12,8 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
         run: |
-          echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
+          docker login --username "${DOCKER_USERNAME}" --password-stdin <<< "${DOCKER_PASSWORD}"
+
 
 #      - name: Pull
 #        uses: actions/checkout@v4
