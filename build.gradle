@@ -14,8 +14,11 @@ sonar {
     properties {
         property "sonar.projectKey", "officecom-back"
         property "sonar.projectName", "officecom-back"
+        property "sonar.host.url", System.getenv('SONAR_HOST_URL')
+        property "sonar.login", System.getenv('SONAR_TOKEN')
     }
 }
+
 
 task stage(dependsOn: ['build'])
 
