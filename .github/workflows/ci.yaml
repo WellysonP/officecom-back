@@ -33,5 +33,6 @@ jobs:
 
       - name: Build and push using docker-compose
         run: |
-          docker-compose build quarkus-app
-          docker-compose push quarkus-app
+          docker-compose build officecom-back
+          docker tag officecom-back:latest wellysonp/officecom-back:latest
+          docker push wellysonp/officecom-back:latest
