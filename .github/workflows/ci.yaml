@@ -18,7 +18,7 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build -x test --console=plain
-
+        
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -41,19 +41,3 @@ jobs:
           push: true
           tags: wellysonp/officecom-back:latest
           platforms: linux/amd64,linux/arm64
-
-#      - name: Checkout
-#        uses: actions/checkout@v3
-#
-#      - name: Build
-#        id: build
-#        uses: cloudposse/github-action-docker-build-push@main
-#        with:
-#          registry: registry.hub.docker.com
-#          organization: "${{ github.event.repository.owner.login }}"
-#          repository: "${{ github.event.repository.name }}"
-#          login: "${{ secrets.DOCKERHUB_USERNAME }}"
-#          password: "${{ secrets.DOCKERHUB_PASSWORD }}"
-#          platforms: linux/amd64,linux/arm64
-
-
