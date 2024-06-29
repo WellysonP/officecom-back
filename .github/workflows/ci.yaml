@@ -34,5 +34,5 @@ jobs:
       - name: Build and push using docker-compose
         run: |
           docker-compose build officecom-back-quarkus-app
-          docker tag officecom-back:latest wellysonp/officecom-back:latest
+          docker tag officecom-back-quarkus-app:latest wellysonp/officecom-back:latest
           docker push wellysonp/officecom-back:latest
